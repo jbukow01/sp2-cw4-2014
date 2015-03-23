@@ -48,5 +48,22 @@ public class Ship {
 	void setHorizontal(boolean horizontal) {
 		//horizontal = horizontal;
 	}
+	
+	// instance methods
+	boolean okToPlaceShipAt(int row, int column, boolean horizontal, Ocean ocean) {
+		return true;
+	}
+	
+	void placeShipAt(int row, int column, boolean horizontal, Ocean ocean) {
+		
+	}
+	
+	boolean shootAt(int row, int column) {
+		return true;
+	}
+	
+	boolean isSunk() {
+		return true;
+	}
 
 }
