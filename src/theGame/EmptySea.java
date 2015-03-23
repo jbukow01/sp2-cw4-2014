@@ -24,5 +24,15 @@ public class EmptySea extends Ship {
 	public String toString() {
 		return null;
 	}
+	
+	@Override
+	boolean shootAt(int row, int column) {
+		return false;
+	}
+	
+	@Override
+	boolean isSunk() {
+		return false;
+	}
 
 }
