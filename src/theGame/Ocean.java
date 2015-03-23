@@ -10,15 +10,28 @@ package theGame;
 public class Ocean {
 
 	Ship[][] ships = new Ship[10][10];
+	Ship[] shipsArray = new Ship[10];
 
 	int shotsFired;
 	int hitCount;
 	int shipsSunk;
-
+	
+	// constructor
 	Ocean() {
 		shotsFired = 0;
 		hitCount = 0;
 		shipsSunk = 0;
+		
+		shipsArray[0] = new Battleship();
+		shipsArray[1] = new Cruiser();
+		shipsArray[2] = new Cruiser();
+		shipsArray[3] = new Destroyer();
+		shipsArray[4] = new Destroyer();
+		shipsArray[5] = new Destroyer();
+		shipsArray[6] = new Submarine();
+		shipsArray[7] = new Submarine();
+		shipsArray[8] = new Submarine();
+		shipsArray[9] = new Submarine();
 	}
 
 	void placeAllShipsRandomly() {
@@ -49,19 +62,6 @@ public class Ocean {
 
 	boolean isGameOver() {
 		return false;
-	}
-
-	Ship[][] getShipArray() {
-		shipsArray[0] = new Battleship();
-		shipsArray[1] = new Cruiser();
-		shipsArray[2] = new Cruiser();
-		shipsArray[3] = new Destroyer();
-		shipsArray[4] = new Destroyer();
-		shipsArray[5] = new Destroyer();
-		shipsArray[6] = new Submarine();
-		shipsArray[7] = new Submarine();
-		shipsArray[8] = new Submarine();
-		shipsArray[9] = new Submarine();
 	}
 
 	void print() {
