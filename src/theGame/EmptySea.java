@@ -7,6 +7,6 @@ package theGame;
  * @author jbukow01
  *
  */
-public class EmptySea {
+public class EmptySea extends Ship {
 
 }

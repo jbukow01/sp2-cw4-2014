@@ -7,6 +7,6 @@ package theGame;
  * @author jbukow01
  *
  */
-public class Cruiser {
+public class Cruiser extends Ship {
 
 }

@@ -7,6 +7,6 @@ package theGame;
  * @author jbukow01
  *
  */
-public class Battleship {
+public class Battleship extends Ship {
 
 }

@@ -4,9 +4,9 @@
 package theGame;
 
 /**
- * @author J
+ * @author jbukow01
  *
  */
-public class Submarine {
+public class Submarine extends Ship {
 
 }
