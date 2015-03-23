@@ -1,2 +1,2 @@
 # sp2-cw4-2014
-Coursework 4
+Software and Programming - Coursework 4
