@@ -8,6 +8,7 @@ package theGame;
  *
  */
 public class Ship {
+	
 	int bowRow;
 	int bowColumn;
 	int length;
