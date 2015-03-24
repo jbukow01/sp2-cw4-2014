@@ -7,6 +7,9 @@ package theGame;
  * @author jbukow01
  *
  */
+
+import java.util.Random;
+
 public class Ocean {
 
 	Ship[][] ships = new Ship[10][10];
@@ -15,6 +18,7 @@ public class Ocean {
 	int shotsFired;
 	int hitCount;
 	int shipsSunk;
+	Random random = new Random();
 	
 	// constructor
 	Ocean() {
@@ -32,6 +36,14 @@ public class Ocean {
 		shipsArray[7] = new Submarine();
 		shipsArray[8] = new Submarine();
 		shipsArray[9] = new Submarine();
+	}
+	
+	int getRandomInteger(int range) {
+		return random.nextInt(range);
+	}
+	
+	boolean getRandomBoolean() {
+		return Math.random() < 0.5;
 	}
 
 	void placeAllShipsRandomly() {

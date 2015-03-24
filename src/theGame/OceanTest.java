@@ -14,8 +14,17 @@ import org.junit.Test;
 public class OceanTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void randoms() {
+		
+		Ocean o = new Ocean();
+		
+		System.out.println(o.getRandomInteger(10));
+		System.out.println(o.getRandomInteger(10));
+		System.out.println(o.getRandomInteger(10));
+		
+		System.out.println(o.getRandomBoolean());
+		System.out.println(o.getRandomBoolean());
+		System.out.println(o.getRandomBoolean());
 	}
 
 }
