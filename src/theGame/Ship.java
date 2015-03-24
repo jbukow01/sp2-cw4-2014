@@ -13,7 +13,7 @@ public class Ship {
 	int bowColumn;
 	int length;
 	
-	boolean horizontal;
+	boolean horizontalDirection;
 	boolean [] hit = new boolean[4];
 	
 	// getters
@@ -26,7 +26,7 @@ public class Ship {
 	}
 	
 	boolean isHorizontal() {
-		return horizontal;
+		return horizontalDirection;
 	}
 	
 	String getShipType() {
@@ -47,7 +47,7 @@ public class Ship {
 	}
 	
 	void setHorizontal(boolean horizontal) {
-		//horizontal = horizontal;
+		horizontalDirection = horizontal;
 	}
 	
 	// instance methods
@@ -57,6 +57,17 @@ public class Ship {
 	
 	void placeShipAt(int row, int column, boolean horizontal, Ocean ocean) {
 		
+		setBowRow(row);
+		setBowColumn(column);
+		setHorizontal(horizontal);
+		
+		if(horizontal) {
+			
+			
+		} else {
+			
+			
+		}
 	}
 	
 	boolean shootAt(int row, int column) {
