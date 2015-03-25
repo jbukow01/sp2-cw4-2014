@@ -57,9 +57,9 @@ public class Ship {
 	
 	void placeShipAt(int row, int column, boolean horizontal, Ocean ocean) {
 		
-		setBowRow(row);
-		setBowColumn(column);
-		setHorizontal(horizontal);
+		//setBowRow(row);
+		//setBowColumn(column);
+		//setHorizontal(horizontal);
 		
 		if(horizontal) {
 			for (int i = 0; i < this.length; i++) {
@@ -67,7 +67,7 @@ public class Ship {
 			}
 		} else {
 			for (int i = 0; i < this.length; i++) {
-				ocean.ships[column][row++] = this;
+				ocean.ships[row++][column] = this;
 			}
 		}
 	}
