@@ -14,6 +14,7 @@ public class Ocean {
 
 	Ship[][] ships = new Ship[10][10];
 	Ship[] shipsArray = new Ship[10];
+	int numberOfShips = shipsArray.length;
 
 	int shotsFired;
 	int hitCount;
@@ -55,11 +56,12 @@ public class Ocean {
 	}
 
 	void placeAllShipsRandomly(int row, int column, boolean horizontal) {
-		int shipLength = shipsArray[0].length;
-		for (int i = 0; i < shipLength; i++) {
-			for (int j = 0; j < shipLength; j++) {
-				shipsArray[i].placeShipAt(row, column, horizontal, this);	
-			}
+		
+		for (int i = 0; i < numberOfShips; i++) {
+			int shipLength = (shipsArray[i].length);
+				for (int j = 0; j < shipLength; j++) {
+					shipsArray[i].placeShipAt(row, column, horizontal, this);	
+				}
 		}
 	}
 
