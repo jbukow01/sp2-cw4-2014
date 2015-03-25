@@ -26,9 +26,9 @@ public class OceanTest {
 		
 		Ocean o = new Ocean();
 		
-		System.out.println(o.ships[0][0]);
-		System.out.println(o.ships[5][5]);
-		System.out.println(o.ships[9][9]);
+		System.out.println("Location 0,0: " + o.ships[0][0]);
+		System.out.println("Location 5,5: " + o.ships[5][5]);
+		System.out.println("Location 9,9: " + o.ships[9][9]);
 		
 	}
 	
@@ -43,13 +43,6 @@ public class OceanTest {
 		System.out.println(o.ships[0][1]);
 		System.out.println(o.ships[0][2]);
 		System.out.println(o.ships[0][3]);
-		
-		o.placeAllShipsRandomly(0, 9, false);
-		
-		System.out.println(o.ships[0][9]);
-		System.out.println(o.ships[1][9]);
-		System.out.println(o.ships[2][9]);
-		System.out.println(o.ships[3][9]);
 	}
 
 }

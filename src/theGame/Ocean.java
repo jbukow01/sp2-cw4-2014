@@ -58,7 +58,7 @@ public class Ocean {
 		int shipLength = shipsArray[0].length;
 		for (int i = 0; i < shipLength; i++) {
 			for (int j = 0; j < shipLength; j++) {
-				shipsArray[0].placeShipAt(row, column, horizontal, this);	
+				shipsArray[i].placeShipAt(row, column, horizontal, this);	
 			}
 		}
 	}

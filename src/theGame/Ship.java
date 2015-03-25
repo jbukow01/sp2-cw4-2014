@@ -62,9 +62,13 @@ public class Ship {
 		setHorizontal(horizontal);
 		
 		if(horizontal) {
-			ocean.ships[row][column] = this;
+			for (int i = 0; i < this.length; i++) {
+				ocean.ships[row][column] = this;
+			}
 		} else {
-			ocean.ships[column][row] = this;
+			for (int i = 0; i < this.length; i++) {
+				ocean.ships[column][row] = this;
+			}
 		}
 	}
 	
