@@ -3,18 +3,12 @@
  */
 package theGame;
 
-/**
- * @author jbukow01
- *
- */
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class OceanTest {
 
 	@Test
-	public void randoms() {
+	public void randomsTest() {
 		
 		Ocean o = new Ocean();
 		
@@ -25,6 +19,17 @@ public class OceanTest {
 		System.out.println(o.getRandomBoolean());
 		System.out.println(o.getRandomBoolean());
 		System.out.println(o.getRandomBoolean());
+	}
+	
+	@Test
+	public void emptyOceanTest() {
+		
+		Ocean o = new Ocean();
+		
+		System.out.println(o.ships[0][0]);
+		System.out.println(o.ships[5][5]);
+		System.out.println(o.ships[9][9]);
+		
 	}
 
 }

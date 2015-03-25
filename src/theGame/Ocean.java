@@ -36,6 +36,14 @@ public class Ocean {
 		shipsArray[7] = new Submarine();
 		shipsArray[8] = new Submarine();
 		shipsArray[9] = new Submarine();
+		
+		int oceanSize = ships.length;
+		
+		for (int i = 0; i < oceanSize; i++) {
+			for (int j = 0; j < oceanSize; j++) {
+				ships[i][j] = new EmptySea();
+			}
+		}
 	}
 	
 	int getRandomInteger(int range) {
