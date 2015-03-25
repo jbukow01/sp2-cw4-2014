@@ -62,11 +62,9 @@ public class Ship {
 		setHorizontal(horizontal);
 		
 		if(horizontal) {
-			
-			
+			ocean.ships[row][column] = this;
 		} else {
-			
-			
+			ocean.ships[column][row] = this;
 		}
 	}
 	
@@ -75,7 +73,12 @@ public class Ship {
 	}
 	
 	boolean isSunk() {
-		return false;
+		for (int i = 0; i < getLength(); i++) {
+			if (!hit[i]) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }

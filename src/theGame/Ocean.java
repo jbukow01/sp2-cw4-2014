@@ -54,8 +54,8 @@ public class Ocean {
 		return Math.random() < 0.5;
 	}
 
-	void placeAllShipsRandomly() {
-
+	void placeAllShipsRandomly(int row, int column, boolean horizontal) {
+		shipsArray[0].placeShipAt(row, column, horizontal, this);
 	}
 
 	boolean isOccupied(int row, int column) {

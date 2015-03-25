@@ -31,5 +31,18 @@ public class OceanTest {
 		System.out.println(o.ships[9][9]);
 		
 	}
+	
+	@Test
+	public void battleshipPlacementTest() {
+		
+		Ocean o = new Ocean();
+		
+		o.placeAllShipsRandomly(0, 0, true);
+		
+		System.out.println(o.ships[0][0]);
+		System.out.println(o.ships[0][1]);
+		System.out.println(o.ships[0][2]);
+		System.out.println(o.ships[0][3]);
+	}
 
 }
