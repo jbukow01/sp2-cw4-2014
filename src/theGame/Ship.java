@@ -75,7 +75,7 @@ public class Ship {
 	}
 	
 	boolean isSunk() {
-		return true;
+		return false;
 	}
 
 }

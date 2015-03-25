@@ -22,7 +22,11 @@ public class Destroyer extends Ship {
 	
 	@Override
 	public String toString() {
-		return null;
+		if (isSunk()) {
+			return "X";
+		} else {
+			return "S";
+		}
 	}
 
 }
