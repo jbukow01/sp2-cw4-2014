@@ -43,6 +43,13 @@ public class OceanTest {
 		System.out.println(o.ships[0][1]);
 		System.out.println(o.ships[0][2]);
 		System.out.println(o.ships[0][3]);
+		
+		o.placeAllShipsRandomly(0, 9, false);
+		
+		System.out.println(o.ships[0][9]);
+		System.out.println(o.ships[1][9]);
+		System.out.println(o.ships[2][9]);
+		System.out.println(o.ships[3][9]);
 	}
 
 }

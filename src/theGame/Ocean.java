@@ -14,6 +14,7 @@ public class Ocean {
 
 	Ship[][] ships = new Ship[10][10];
 	Ship[] shipsArray = new Ship[10];
+	int shipLength = shipsArray.length;
 
 	int shotsFired;
 	int hitCount;
@@ -55,7 +56,9 @@ public class Ocean {
 	}
 
 	void placeAllShipsRandomly(int row, int column, boolean horizontal) {
-		shipsArray[0].placeShipAt(row, column, horizontal, this);
+		for (int i = 0; i < shipLength; i++) {
+			shipsArray[0].placeShipAt(row, column, horizontal, this);
+		}
 	}
 
 	boolean isOccupied(int row, int column) {
