@@ -51,5 +51,13 @@ public class OceanTest {
 		System.out.println(o.ships[2][9]);
 		System.out.println(o.ships[3][9]);
 	}
+	
+	@Test
+	public void printTest() {
+		
+		Ocean o = new Ocean();
+		
+		o.print();
+	}
 
 }

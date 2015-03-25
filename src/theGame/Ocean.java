@@ -15,6 +15,8 @@ public class Ocean {
 	Ship[][] ships = new Ship[10][10];
 	Ship[] shipsArray = new Ship[10];
 	int numberOfShips = shipsArray.length;
+	int oceanSizeColumns = ships[0].length;
+	int oceanSizeRows = ships[1].length;
 
 	int shotsFired;
 	int hitCount;
@@ -38,10 +40,10 @@ public class Ocean {
 		shipsArray[8] = new Submarine();
 		shipsArray[9] = new Submarine();
 		
-		int oceanSize = ships.length;
+		//int oceanSize = ships.length;
 		
-		for (int i = 0; i < oceanSize; i++) {
-			for (int j = 0; j < oceanSize; j++) {
+		for (int i = 0; i < oceanSizeColumns; i++) {
+			for (int j = 0; j < oceanSizeRows; j++) {
 				ships[i][j] = new EmptySea();
 			}
 		}
@@ -92,8 +94,15 @@ public class Ocean {
 	}
 
 	void print() {
+		System.out.print("  ");
+		for (int i = 0; i < oceanSizeColumns; i++) {
+			System.out.print(i + " ");
+		}
 		System.out.println();
-		System.out.println(" 0 1 2 3 4 5 6 7 8 9");
+		
+		for (int i = 0; i < oceanSizeRows; i++) {
+			System.out.println(i + " ");
+		}
 		System.out.println();
 	}
 }
