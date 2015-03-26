@@ -39,17 +39,7 @@ public class OceanTest {
 		
 		o.placeAllShipsRandomly();
 		
-		System.out.println(o.ships[0][0]);
-		System.out.println(o.ships[0][1]);
-		System.out.println(o.ships[0][2]);
-		System.out.println(o.ships[0][3]);
-		
 		o.placeAllShipsRandomly();
-		
-		System.out.println(o.ships[0][9]);
-		System.out.println(o.ships[1][9]);
-		System.out.println(o.ships[2][9]);
-		System.out.println(o.ships[3][9]);
 	}
 	
 	@Test
@@ -58,18 +48,6 @@ public class OceanTest {
 		Ocean o = new Ocean();
 		
 		o.placeAllShipsRandomly();
-		
-		System.out.println(o.ships[0][0]);
-		System.out.println(o.ships[0][1]);
-		System.out.println(o.ships[0][2]);
-		System.out.println(o.ships[0][3]);
-		
-		o.placeAllShipsRandomly();
-		
-		System.out.println(o.ships[0][9]);
-		System.out.println(o.ships[1][9]);
-		System.out.println(o.ships[2][9]);
-		System.out.println(o.ships[3][9]);
 		
 		o.print();
 	}

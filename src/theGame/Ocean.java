@@ -58,12 +58,13 @@ public class Ocean {
 
 	void placeAllShipsRandomly() {
 		
-		int row = getRandomInteger(oceanSize);
-		int column = getRandomInteger(oceanSize);
-		boolean horizontal = getRandomBoolean();
-		
 		for (int i = 0; i < numberOfShips; i++) {
+			
+			int row = getRandomInteger(oceanSize);
+			int column = getRandomInteger(oceanSize);
+			boolean horizontal = getRandomBoolean();
 			int shipLength = (shipsArray[i].length);
+			
 				for (int j = 0; j < shipLength; j++) {
 					shipsArray[i].placeShipAt(row, column, horizontal, this);	
 				}
