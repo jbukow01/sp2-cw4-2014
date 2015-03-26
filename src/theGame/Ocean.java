@@ -56,7 +56,11 @@ public class Ocean {
 		return Math.random() < 0.5;
 	}
 
-	void placeAllShipsRandomly(int row, int column, boolean horizontal) {
+	void placeAllShipsRandomly() {
+		
+		int row = getRandomInteger(oceanSize);
+		int column = getRandomInteger(oceanSize);
+		boolean horizontal = getRandomBoolean();
 		
 		for (int i = 0; i < numberOfShips; i++) {
 			int shipLength = (shipsArray[i].length);
