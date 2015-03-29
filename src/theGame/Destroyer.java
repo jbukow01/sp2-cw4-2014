@@ -21,12 +21,24 @@ public class Destroyer extends Ship {
 	}
 	
 	@Override
-	public String toString() {
-		if (isSunk()) {
+	public String toString(int i, int j) {
+		
+		if (this.isSunk()) {
 			return "X";
+		}
+		
+		if (!this.horizontal) {
+			if (this.hit[i - this.getBowRow()]) {
+				return "S";
+			} else {
+				return ".";
+			}
 		} else {
-			return "S";
+			if (this.hit[j - this.getBowColumn()]) {
+				return "S";
+			} else {
+				return ".";
+			}
 		}
 	}
-
 }
