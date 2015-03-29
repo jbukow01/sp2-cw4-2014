@@ -11,8 +11,8 @@ public class Cruiser extends Ship {
 	
 	// constructor
 	Cruiser() {
-		length = 3;
-		hit = new boolean[3]; 
+		this.length = 3;
+		this.hit = new boolean[3]; 
 	}
 	
 	@Override

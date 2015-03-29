@@ -3,12 +3,12 @@
  */
 package theGame;
 
+import java.util.Random;
+
 /**
  * @author jbukow01
  *
  */
-
-import java.util.Random;
 
 public class Ocean {
 
@@ -91,9 +91,24 @@ public class Ocean {
 	}
 
 	boolean shootAt(int row, int column) {
-		shotsFired++;
-		hitCount++;
-		return false;
+		this.shotsFired++;
+		if (!this.isOccupied(row, column)) {
+			if (this.ships[row][column].hit[0]) {
+				this.ships[row][column].hit[0] = true;
+			}
+			return false;
+		} else if (this.ships[row][column].isSunk()) {
+			this.hitCount++;
+			return false;
+		} else {
+			this.hitCount++;
+			this.ships[row][column].shootAt(row, column);
+			if (this.ships[row][column].isSunk()) {
+				this.shipsSunk++;
+				System.out.println(this.ships[row][column].getShipType() + " has been sunk.");
+			}
+		}
+		return true;
 	}
 
 	int getShotsFired() {

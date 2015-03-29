@@ -11,8 +11,8 @@ public class Destroyer extends Ship {
 	
 	// constructor
 	Destroyer() {
-		length = 2;
-		hit = new boolean[2]; 
+		this.length = 2;
+		this.hit = new boolean[2]; 
 	}
 	
 	@Override

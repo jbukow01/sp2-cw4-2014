@@ -11,8 +11,8 @@ public class Submarine extends Ship {
 	
 	// constructor
 	Submarine() {
-		length = 1;
-		hit = new boolean[1]; 
+		this.length = 1;
+		this.hit = new boolean[1]; 
 	}
 	
 	@Override

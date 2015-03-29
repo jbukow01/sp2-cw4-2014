@@ -11,8 +11,8 @@ public class Battleship extends Ship {
 	
 	// constructor
 	Battleship() {
-		length = 4;
-		hit = new boolean[4]; 
+		this.length = 4;
+		this.hit = new boolean[4]; 
 	}
 	
 	@Override
@@ -21,12 +21,15 @@ public class Battleship extends Ship {
 	}
 	
 	@Override
-	public String toString() {
+	public String toString(int i, int j) {
 		if (isSunk()) {
 			return "X";
-		} else {
+		}
+		
+		if (this.hit[i- this.getBowRow()]) {
 			return "S";
+		} else {
+			return ".";
 		}
 	}
-
 }

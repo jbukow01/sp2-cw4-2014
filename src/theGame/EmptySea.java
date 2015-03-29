@@ -13,8 +13,8 @@ public class EmptySea extends Ship {
 	
 	// constructor
 	EmptySea() {
-		length = 1;
-		hit = false; 
+		this.length = 1;
+		this.hit = false; 
 	}
 	
 	@Override
