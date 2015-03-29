@@ -137,7 +137,7 @@ public class Ocean {
 		for (int i = 0; i < oceanSize; i++) {
 			System.out.print(i + " ");
 			for (int j = 0; j < numberOfShips; j++) {
-				System.out.print(ships[i][j].toString() + " ");
+				System.out.print(this.ships[i][j].toString(i, j) + " ");
 			}
 			System.out.println();
 		}

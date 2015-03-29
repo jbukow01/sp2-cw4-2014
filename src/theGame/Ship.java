@@ -107,21 +107,21 @@ public class Ship {
 	
 	boolean shootAt(int row, int column) {
 		if (!this.isHorizontal()) {
-			int temp = this.getBowRow();
-			if (!this.hit[row - temp]) {
-				this.hit[row - temp] = true;				
+			int tempRow = this.getBowRow();
+			if (!this.hit[row - tempRow]) {
+				this.hit[row - tempRow] = true;				
 			}
 		} else {
-			int temp = this.getBowColumn();
-			if (!this.hit[column - temp]) {
-				this.hit[column - temp] = true;				
+			int tempColumn = this.getBowColumn();
+			if (!this.hit[column - tempColumn]) {
+				this.hit[column - tempColumn] = true;				
 			}
 		}
 		return true;
 	}
 	
 	public String toString(int i, int j) {
-		return "status";
+		return "";
 	}
 	
 	boolean isSunk() {

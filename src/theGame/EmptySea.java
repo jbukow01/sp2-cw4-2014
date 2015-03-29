@@ -9,12 +9,10 @@ package theGame;
  */
 public class EmptySea extends Ship {
 	
-	boolean hit;
-	
 	// constructor
 	EmptySea() {
 		this.length = 1;
-		this.hit = false; 
+		this.hit = new boolean[1]; 
 	}
 	
 	@Override
@@ -23,17 +21,17 @@ public class EmptySea extends Ship {
 	}
 	
 	@Override
-	public String toString() {
-		if (!hit) {
-			return ".";
-		} else {
+	public String toString(int i, int j) {
+		if (this.hit[0]) {
 			return "-";
+		} else {
+			return ".";
 		}
 	}
 	
 	@Override
 	boolean shootAt(int row, int column) {
-		hit = true;
+		this.hit[0] = true;
 		return false;
 	}
 	

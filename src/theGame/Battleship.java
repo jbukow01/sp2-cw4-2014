@@ -22,14 +22,23 @@ public class Battleship extends Ship {
 	
 	@Override
 	public String toString(int i, int j) {
-		if (isSunk()) {
+		
+		if (this.isSunk()) {
 			return "X";
 		}
 		
-		if (this.hit[i- this.getBowRow()]) {
-			return "S";
+		if (!this.horizontal) {
+			if (this.hit[i - this.getBowRow()]) {
+				return "S";
+			} else {
+				return ".";
+			}
 		} else {
-			return ".";
+			if (this.hit[j - this.getBowColumn()]) {
+				return "S";
+			} else {
+				return ".";
+			}
 		}
 	}
 }
