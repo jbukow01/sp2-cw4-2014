@@ -4,6 +4,7 @@
 package theGame;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * @author jbukow01
@@ -16,11 +17,13 @@ public class Ocean {
 	Ship[] shipsArray = new Ship[10];
 	int numberOfShips = shipsArray.length;
 	int oceanSize = ships.length;
+	int boardSize = oceanSize - 1;
 
 	int shotsFired;
 	int hitCount;
 	int shipsSunk;
 	Random random = new Random();
+	private Scanner input;
 	
 	// constructor
 	Ocean() {
@@ -124,7 +127,47 @@ public class Ocean {
 	}
 
 	boolean isGameOver() {
-		return false;
+		if (this.getShipsSunk() == 10) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	int input(String data) {
+		input = new Scanner(System.in);
+		int user = oceanSize + 1;
+
+		if(data.equals("row") || data.equals("column")) {
+			while (user > oceanSize || user < 0){
+				
+				System.out.print("Enter " + data + ": ");
+				
+				while (!input.hasNextInt()){					
+					System.out.print(input.next() + " is not valid. Enter a valid number (between 0 and " + boardSize + ")");			
+				}
+
+				user = input.nextInt();
+
+				if(user > 9 || user < 0){
+					System.out.print(user + " is not valid. Enter a valid number (between 0 and " + boardSize + ")");				
+				}
+			}
+		} else {
+			System.out.print("Would you like to play again. Enter 1 if so.");
+			int option = Integer.parseInt(input.next());
+			repeat(option);
+			System.out.println();
+		}		
+		return user;
+	}
+	
+	boolean repeat(int option) {
+		if (option == 11) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	void print() {

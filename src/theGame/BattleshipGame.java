@@ -3,8 +3,6 @@
  */
 package theGame;
 
-import java.util.Scanner;
-
 /**
  * @author jbukow01
  *
@@ -12,37 +10,37 @@ import java.util.Scanner;
 
 public class BattleshipGame {
 
-	private static Scanner input;
-
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		input = new Scanner(System.in);
-		
-		Ocean o = new Ocean();
-		
-		o.placeAllShipsRandomly();
-		
-		System.out.println("Welcome to the Battleship Game!");
-		
-		while (!o.isGameOver()) {
-			System.out.println("Number of ships sunk: " + o.getShipsSunk());
-			System.out.println("Number of shots fired: " + o.getShotsFired());
-			System.out.println("Number of hits: " + o.getHitCount());
-			
-			System.out.print("Enter row: ");
-			
-			int row = input.nextInt();
 	
-			System.out.print("Enter column: ");
-			int column = input.nextInt();
+	public static void main(String[] args) {
+		
+		boolean repeat = true;
+		
+		while (repeat) {
+			Ocean o = new Ocean();
 			
-			o.shootAt(row, column);
+			o.placeAllShipsRandomly();
 			
-			o.print();
+			System.out.println("Welcome to the Battleship Game!");
+			
+			while (!o.isGameOver()) {
+				System.out.println("Number of ships sunk: " + o.getShipsSunk());
+				System.out.println("Number of shots fired: " + o.getShotsFired());
+				System.out.println("Number of hits: " + o.getHitCount());
+				System.out.println();
+				
+				int row = o.input("row");
+				int column = o.input("column");
+				
+				o.shootAt(row, column);
+				
+				o.print();		
+			}
+			
+			System.out.println("You won. You fired: "+o.getShotsFired() + " shots to sunk all ships.");
+			repeat = o.repeat(o.input(""));
 		}
-
 	}
-
 }

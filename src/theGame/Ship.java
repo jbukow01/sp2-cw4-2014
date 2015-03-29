@@ -30,7 +30,7 @@ public class Ship {
 	}
 	
 	String getShipType() {
-		return "type";
+		return "";
 	}
 	
 	int getLength() {
