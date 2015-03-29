@@ -108,6 +108,7 @@ public class Ocean {
 			this.ships[row][column].shootAt(row, column);
 			if (this.ships[row][column].isSunk()) {
 				this.shipsSunk++;
+				System.out.println();
 				System.out.println(this.ships[row][column].getShipType() + " has been sunk.");
 			}
 		}
@@ -163,7 +164,7 @@ public class Ocean {
 	}
 	
 	boolean repeat(int option) {
-		if (option == 11) {
+		if (option == 1) {
 			return true;
 		} else {
 			return false;
@@ -171,6 +172,7 @@ public class Ocean {
 	}
 
 	void print() {
+		System.out.println();
 		System.out.print("  ");
 		for (int i = 0; i < oceanSize; i++) {
 			System.out.print(i + " ");
