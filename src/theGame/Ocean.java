@@ -55,24 +55,37 @@ public class Ocean {
 	boolean getRandomBoolean() {
 		return Math.random() < 0.5;
 	}
+	
+	boolean isOutOfBounds(int bow, int length) {
+		if (bow + length > oceanSize) {
+			return true;
+		}
+		return false;
+	}
 
 	void placeAllShipsRandomly() {
 		
 		for (int i = 0; i < numberOfShips; i++) {
 			
-			int row = getRandomInteger(oceanSize);
-			int column = getRandomInteger(oceanSize);
-			boolean horizontal = getRandomBoolean();
-			int shipLength = (shipsArray[i].length);
-			
-				for (int j = 0; j < shipLength; j++) {
-					shipsArray[i].placeShipAt(row, column, horizontal, this);	
+			boolean floating = false;
+			while (!floating) {
+				int row = getRandomInteger(oceanSize);
+				int column = getRandomInteger(oceanSize);
+				boolean horizontal = getRandomBoolean();
+				int shipLength = (shipsArray[i].length);
+				
+				if (shipsArray[i].okToPlaceShipAt(row, column, horizontal, this)) {
+					for (int j = 0; j < shipLength; j++) {
+						shipsArray[i].placeShipAt(row, column, horizontal, this);
+					}
+				floating = true;
 				}
+			}
 		}
 	}
 
 	boolean isOccupied(int row, int column) {
-		return false;
+		return true;
 	}
 
 	boolean shootAt(int row, int column) {

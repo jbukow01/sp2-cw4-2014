@@ -13,20 +13,20 @@ public class Ship {
 	int bowColumn;
 	int length;
 	
-	boolean horizontalDirection;
+	boolean horizontal;
 	boolean [] hit = new boolean[4];
 	
 	// getters
 	int getBowRow() {
-		return bowRow;
+		return this.bowRow;
 	}
 	
 	int getBowColumn() {
-		return bowColumn;
+		return this.bowColumn;
 	}
 	
 	boolean isHorizontal() {
-		return horizontalDirection;
+		return this.horizontal;
 	}
 	
 	String getShipType() {
@@ -34,32 +34,45 @@ public class Ship {
 	}
 	
 	int getLength() {
-		return length;
+		return this.length;
 	}
 	
 	// setters
 	void setBowRow(int row) {
-		bowRow = row;
+		this.bowRow = row;
 	}
 	
 	void setBowColumn(int column) {
-		bowColumn = column;
+		this.bowColumn = column;
 	}
 	
 	void setHorizontal(boolean horizontal) {
-		horizontalDirection = horizontal;
+		this.horizontal = horizontal;
 	}
 	
 	// instance methods
 	boolean okToPlaceShipAt(int row, int column, boolean horizontal, Ocean ocean) {
+		if (horizontal) {
+			for (int i = 0; i < column + this.getLength(); i++) {
+				if (ocean.isOutOfBounds(column, getLength())) {
+					return false;
+				}
+			}
+		} else {
+			for (int i = 0; i < row + getLength(); i++) {
+				if (ocean.isOutOfBounds(row, getLength())) {
+					return false;
+				}
+			}
+		}
 		return true;
 	}
 	
 	void placeShipAt(int row, int column, boolean horizontal, Ocean ocean) {
 		
-		//setBowRow(row);
-		//setBowColumn(column);
-		//setHorizontal(horizontal);
+		setBowRow(row);
+		setBowColumn(column);
+		setHorizontal(horizontal);
 		
 		if(horizontal) {
 			for (int i = 0; i < this.length; i++) {
