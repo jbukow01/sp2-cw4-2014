@@ -119,7 +119,7 @@ public class Ship {
 		}
 		return true;
 	}
-	
+
 	public String toString(int i, int j) {
 		return "";
 	}
