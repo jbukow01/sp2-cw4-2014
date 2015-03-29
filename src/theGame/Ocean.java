@@ -85,7 +85,11 @@ public class Ocean {
 	}
 
 	boolean isOccupied(int row, int column) {
-		return true;
+		if (this.ships[row][column].getShipType().equals("EmptySea")) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	boolean shootAt(int row, int column) {
