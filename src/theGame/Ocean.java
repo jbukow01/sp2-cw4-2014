@@ -39,8 +39,6 @@ public class Ocean {
 		shipsArray[8] = new Submarine();
 		shipsArray[9] = new Submarine();
 		
-		//int oceanSize = ships.length;
-		
 		for (int i = 0; i < oceanSize; i++) {
 			for (int j = 0; j < oceanSize; j++) {
 				ships[i][j] = new EmptySea();
@@ -99,15 +97,15 @@ public class Ocean {
 	}
 
 	int getShotsFired() {
-		return shotsFired;
+		return this.shotsFired;
 	}
 
 	int getHitCount() {
-		return hitCount;
+		return this.hitCount;
 	}
 
 	int getShipsSunk() {
-		return shipsSunk;
+		return this.shipsSunk;
 	}
 
 	boolean isGameOver() {

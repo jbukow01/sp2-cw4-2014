@@ -53,15 +53,35 @@ public class Ship {
 	// instance methods
 	boolean okToPlaceShipAt(int row, int column, boolean horizontal, Ocean ocean) {
 		if (horizontal) {
-			for (int i = 0; i < column + this.getLength(); i++) {
-				if (ocean.isOutOfBounds(column, getLength())) {
+			for (int i = 0; i < this.getLength(); i++) {
+				if (ocean.isOutOfBounds(column, this.getLength())) {
+					return false;
+				}
+				if (ocean.isOccupied(row, column+i)) {
 					return false;
 				}
 			}
 		} else {
-			for (int i = 0; i < row + getLength(); i++) {
-				if (ocean.isOutOfBounds(row, getLength())) {
+			for (int i = 0; i < this.getLength(); i++) {
+				if (ocean.isOutOfBounds(row, this.getLength())) {
 					return false;
+				}
+				if (ocean.isOccupied(row+i, column)) {
+					return false;
+				}
+			}
+		}
+		
+		//if (ocean.isSurrounded(row, column, this.getLength())) {
+			//return false;
+		//}
+		
+		for(int i = row - 1; i <= row + this.getLength(); i++) {
+			for (int j = column - 1; j <= column + this.getLength(); j++ ) {
+				if (i >= 0 && i < ocean.oceanSize && j >= 0 && j < ocean.oceanSize) {
+						if (ocean.isOccupied(i, j) && ocean.ships[i][j] != this) {
+							return false;
+					}
 				}
 			}
 		}
@@ -70,17 +90,17 @@ public class Ship {
 	
 	void placeShipAt(int row, int column, boolean horizontal, Ocean ocean) {
 		
-		setBowRow(row);
-		setBowColumn(column);
-		setHorizontal(horizontal);
+		this.setBowRow(row);
+		this.setBowColumn(column);
+		this.setHorizontal(horizontal);
 		
 		if(horizontal) {
 			for (int i = 0; i < this.length; i++) {
-				ocean.ships[row][column++] = this;
+				ocean.ships[row][column+i] = this;
 			}
 		} else {
 			for (int i = 0; i < this.length; i++) {
-				ocean.ships[row++][column] = this;
+				ocean.ships[row+i][column] = this;
 			}
 		}
 	}
